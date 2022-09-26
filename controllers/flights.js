@@ -7,6 +7,8 @@ function newFlight(req,res){
 }
 
 function create(req,res) {
+  console.log(req.body)
+  req.body.depart = !!req.body.depart
   Flight.create(req.body)
   .then(flight => {
     res.redirect(`/flights/`)
@@ -20,7 +22,7 @@ function index(req,res) {
   Flight.find({})
   .then(flights => {
     res.render('flights/index', {
-      flights: flights, 
+      flights, 
       title: 'All Flights'
     })
   })
@@ -29,7 +31,8 @@ function index(req,res) {
   })
 }
 export {
+  index,
   newFlight as new,
   create, 
-  index,
 }
+  
