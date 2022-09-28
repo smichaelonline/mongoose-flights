@@ -14,6 +14,11 @@
     <div>Departure Date: </div>
     <div><%= flight.depart %></div>
   </section>
+  <div>
+    <a href="/flights/<%= flight._id %>/edit">
+      <button>Edit Flight Information</button>
+    </a>
+  </div>
 </main>
 
 <%- include('../partials/footer')%> 

@@ -1,10 +1,10 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/flights/new.css" />
+<link rel="stylesheet" href="/stylesheets/flights/edit.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <form id="new-form" action="/flights" method="POST">
+  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
     <label for="airline-select">Airline:</label>
     <select name="airline" id="airline-select">
       <option value="American">American</option> 
@@ -22,10 +22,12 @@
     </select>
 
     <label for="flightNo-input">Flight Number:</label>
-    <input type="number" name="flightNo" id="flightNo-input" required="true">
+    <input type="number" name="flightNo" id="flightNo-input" required="true" value="<%= flight.flightNo %>">
+
     <label for="depart">Departure Date:</label>
-    <input type="datetime-local" name="depart" id="date-input">
-    <button type="submit">Add Flight</button>
+    <input type="datetime-local" name="depart" id="date-input" value="<%= flight.depart.toISOString().slice(0,16) %>">
+
+    <button type="submit">Save Flight Details</button>
   </form>
 </main>
 
