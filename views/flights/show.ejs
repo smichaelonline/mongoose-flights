@@ -14,6 +14,19 @@
     <div>Departure Date: </div>
     <div><%= flight.depart %></div>
   </section>
+
+  <h2>Tickets:</h2>
+  <form 
+    id="add-ticket-form"
+    action="/flights/<%= flight._id %>/ticket"
+    method="post"
+  >
+    <label for="seat">Seat Selection:</label>
+    <input type="text" name="seat" id="seat-input" required pattern="[A-F][1-9]\d?">
+    <label for="price">Ticket Price:</label>
+    <input type="number" name="price" id="price-input">
+    <button>Save Ticket</button>
+  </form>
   <div>
     <a href="/flights/<%= flight._id %>/edit">
       <button>Edit Flight Information</button>
