@@ -7,11 +7,9 @@ function newFlight(req,res){
 }
 
 function create(req,res) {
-  console.log(req.body)
-  req.body.depart = !!req.body.depart
   Flight.create(req.body)
   .then(flight => {
-    res.redirect(`/flights/`)
+    res.redirect('/flights')
   })
   .catch(err => {
     res.redirect('/flights/new')
@@ -30,9 +28,25 @@ function index(req,res) {
     res.redirect('/flights/new')
   })
 }
+
+function show(req,res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show',{
+      title: 'Flight Details', 
+      flight: flight, 
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newFlight as new,
   create, 
+  show,
 }
   
