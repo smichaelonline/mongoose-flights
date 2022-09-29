@@ -14,10 +14,10 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: #A390E4;
   /* Use a system font, if none are available use an available sans-sarif font */
   margin: 0;
-  color: #424748;
+  color: #261132;
   min-height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
@@ -32,7 +32,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e8eceb;
+  background-color: #FEF9FF;
   padding: 20px;
 }
 
@@ -42,7 +42,7 @@ body > main h1:first-child {
 
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #A390E4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -60,7 +60,7 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
+  color: #A390E4;
 }
 
 nav > a:visited {
@@ -68,8 +68,8 @@ nav > a:visited {
 }
 
 nav > a:hover {
-  color: white;
-  background-color: #424748;
+  color: #FEF9FF;
+  background-color: #682F89;
 }
 
 nav > a.active {
